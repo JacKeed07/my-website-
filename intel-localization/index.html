@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="rootHtml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intel Sustainability | Localization & Accessibility — Zefeng Wang</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="bg-white border-bottom sticky-top">
+  <nav class="container d-flex justify-content-between align-items-center py-3" aria-label="Main">
+    <a class="fw-bold text-decoration-none text-dark" href="#main"><span class="badge bg-intel fst-italic">intel</span> <span data-en="Sustainability" data-ar="الاستدامة">Sustainability</span></a>
+    <div class="d-flex align-items-center gap-2">
+      <label for="langSelect" class="visually-hidden">Language</label>
+      <select id="langSelect" class="form-select form-select-sm w-auto" aria-label="Select language">
+        <option value="en">English</option>
+        <option value="ar">العربية (Arabic)</option>
+      </select>
+      <a class="btn btn-sm btn-outline-primary" href="#subscribe" data-en="Subscribe" data-ar="اشترك">Subscribe</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero text-center text-white">
+    <div class="container py-5">
+      <p class="fw-bold text-uppercase small" data-en="Intel RISE Strategy" data-ar="استراتيجية إنتل RISE">Intel RISE Strategy</p>
+      <h1 class="display-5 fw-bold" data-en="Building a Sustainable Future, in Every Language" data-ar="بناء مستقبل مستدام، بكل لغة">Building a Sustainable Future, in Every Language</h1>
+      <p class="lead mx-auto col-md-8" data-en="This page adapts Intel's sustainability story for right-to-left languages and for everyone — with responsive Bootstrap layout and accessible design." data-ar="تكيف هذه الصفحة قصة استدامة إنتل للغات من اليمين إلى اليسار وللجميع — مع تخطيط Bootstrap سريع الاستجابة وتصميم يمكن الوصول إليه.">This page adapts Intel's sustainability story for right-to-left languages and for everyone — with responsive Bootstrap layout and accessible design.</p>
+    </div>
+  </section>
+
+  <section class="container py-5" aria-labelledby="features-heading">
+    <h2 id="features-heading" class="text-center mb-4" data-en="Our Focus Areas" data-ar="مجالات تركيزنا">Our Focus Areas</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm p-4">
+          <i class="fa-solid fa-cloud fa-2x text-intel mb-3" aria-hidden="true"></i>
+          <h3 class="h5" data-en="Climate & Energy" data-ar="المناخ والطاقة">Climate & Energy</h3>
+          <p data-en="Working toward net-zero operations by 2040 and 100% renewable electricity in manufacturing." data-ar="العمل نحو صافي انبعاثات صفرية بحلول عام 2040 وطاقة متجددة بنسبة 100٪ في التصنيع.">Working toward net-zero operations by 2040 and 100% renewable electricity in manufacturing.</p>
+          <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#climateModal" data-en="Learn More" data-ar="اعرف أكثر">Learn More</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm p-4">
+          <i class="fa-solid fa-droplet fa-2x text-intel mb-3" aria-hidden="true"></i>
+          <h3 class="h5" data-en="Water Stewardship" data-ar="إدارة المياه">Water Stewardship</h3>
+          <p data-en="Aiming for net positive water by conserving, recycling, and restoring water in local watersheds." data-ar="نهدف إلى تحقيق صافي مياه إيجابي من خلال الحفظ وإعادة التدوير واستعادة المياه محلياً.">Aiming for net positive water by conserving, recycling, and restoring water in local watersheds.</p>
+          <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#waterModal" data-en="Learn More" data-ar="اعرف أكثر">Learn More</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm p-4">
+          <i class="fa-solid fa-recycle fa-2x text-intel mb-3" aria-hidden="true"></i>
+          <h3 class="h5" data-en="Circularity & Waste" data-ar="الدائرية والنفايات">Circularity & Waste</h3>
+          <p data-en="Designing for reuse and recycling, and working toward zero total waste to landfill." data-ar="التصميم لإعادة الاستخدام والتدوير، والعمل نحو صفر نفايات إلى المكبات.">Designing for reuse and recycling, and working toward zero total waste to landfill.</p>
+          <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#wasteModal" data-en="Learn More" data-ar="اعرف أكثر">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container pb-5" aria-labelledby="timeline-heading">
+    <h2 id="timeline-heading" class="text-center" data-en="Timeline Highlights" data-ar="أبرز المحطات">Timeline Highlights</h2>
+    <img class="img-fluid rounded my-3" src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80" alt="Wind turbines at sunset generating renewable electricity">
+    <div class="accordion" id="timelineAccordion">
+      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#y2020" aria-expanded="true">2020 — RISE Strategy Launched</button></h3><div id="y2020" class="accordion-collapse collapse show" data-bs-parent="#timelineAccordion"><div class="accordion-body">Intel launched RISE (Responsible, Inclusive, Sustainable, Enabling) with 2030 goals for climate, water, waste, and inclusion.</div></div></div>
+      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#y2030" aria-expanded="false">2030 — RISE Goals Target</button></h3><div id="y2030" class="accordion-collapse collapse" data-bs-parent="#timelineAccordion"><div class="accordion-body">100% renewable electricity globally, net positive water, and zero waste to landfill across manufacturing.</div></div></div>
+      <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#y2040" aria-expanded="false">2040 — Net-Zero Operations</button></h3><div id="y2040" class="accordion-collapse collapse" data-bs-parent="#timelineAccordion"><div class="accordion-body">Intel's commitment to net-zero greenhouse gas emissions across global operations.</div></div></div>
+    </div>
+  </section>
+
+  <section id="subscribe" class="bg-light py-5" aria-labelledby="subscribe-heading">
+    <div class="container col-md-6">
+      <h2 id="subscribe-heading" data-en="Subscribe to Our Sustainability Newsletter" data-ar="اشترك في نشرة الاستدامة">Subscribe to Our Sustainability Newsletter</h2>
+      <p data-en="Get quarterly updates on Intel's progress. We respect your privacy." data-ar="احصل على تحديثات ربع سنوية حول تقدم إنتل. نحن نحترم خصوصيتك.">Get quarterly updates on Intel's progress. We respect your privacy.</p>
+      <form id="newsletterForm" novalidate>
+        <div class="mb-3">
+          <label for="fullName" class="form-label" data-en="Full name" data-ar="الاسم الكامل">Full name</label>
+          <input type="text" class="form-control" id="fullName" name="fullName" autocomplete="name" required aria-describedby="nameHelp">
+          <div id="nameHelp" class="form-text">Enter your first and last name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label" data-en="Email address" data-ar="البريد الإلكتروني">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" autocomplete="email" required aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email.</div>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="consent" required>
+          <label class="form-check-label" for="consent" data-en="I agree to receive the newsletter." data-ar="أوافق على تلقي النشرة.">I agree to receive the newsletter.</label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" data-en="Subscribe" data-ar="اشترك">Subscribe</button>
+        <p id="formMsg" class="mt-3" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-dark text-white text-center py-4">
+  <p class="mb-1">© 2026 Intel Sustainability (student project) — Built by Zefeng (Jack) Wang, UT Austin</p>
+  <p class="small mb-0"><a class="text-white" href="https://jackeed07.github.io/my-website-/">Portfolio</a> • <a class="text-white" href="#main">Back to top</a></p>
+</footer>
+
+<!-- Modals -->
+<div class="modal fade" id="climateModal" tabindex="-1" aria-labelledby="climateLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="climateLabel">Climate & Energy</h5><button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">Intel is investing in renewable electricity, energy-efficient fabs, and products that deliver more performance per watt.</div></div></div></div>
+<div class="modal fade" id="waterModal" tabindex="-1" aria-labelledby="waterLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="waterLabel">Water Stewardship</h5><button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">Conservation inside operations plus restoration projects with local partners help Intel aim for net positive water.</div></div></div></div>
+<div class="modal fade" id="wasteModal" tabindex="-1" aria-labelledby="wasteLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="wasteLabel">Circularity & Waste</h5><button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">Circular design means materials can be reused and recycled, keeping waste out of landfills.</div></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const html=document.getElementById('rootHtml');
+const select=document.getElementById('langSelect');
+function setLang(lang){
+  html.lang = lang === 'ar' ? 'ar' : 'en';
+  html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = lang === 'ar' ? el.getAttribute('data-ar') : el.getAttribute('data-en');
+  });
+}
+// LevelUp: auto-detect language
+const detected = (navigator.language||'en').startsWith('ar') ? 'ar':'en';
+select.value=detected; setLang(detected);
+select.addEventListener('change',e=>setLang(e.target.value));
+
+document.getElementById('newsletterForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const name=document.getElementById('fullName').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const msg=document.getElementById('formMsg');
+  if(!name||!email||!document.getElementById('consent').checked){ msg.textContent='Please complete all fields and check the consent box.'; msg.className='mt-3 text-danger'; return; }
+  msg.textContent='Thank you, '+name+'! You are subscribed with '+email+'.'; msg.className='mt-3 text-success';
+  this.reset();
+});
+</script>
+</body>
+</html>

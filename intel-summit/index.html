@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intel Sustainability Summit Check-In | Zefeng Wang</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <span class="logo"><span class="badge">intel</span> Sustainability Summit</span>
+    <span class="small">Check-In App</span>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>Welcome to the Intel Sustainability Summit</h1>
+    <p>Check in below and help your team win the turnout challenge. Teams: Water Wise, Net Zero, and Renewables.</p>
+  </section>
+
+  <section class="card" aria-labelledby="checkin-heading">
+    <h2 id="checkin-heading"><i class="fa-solid fa-clipboard-check"></i> Attendee Check-In</h2>
+    <form id="checkinForm">
+      <label for="nameInput">Your name</label>
+      <input id="nameInput" type="text" placeholder="e.g. Alex Johnson" required autocomplete="name">
+      <label for="teamSelect">Your team</label>
+      <select id="teamSelect" required>
+        <option value="">Choose a team...</option>
+        <option value="Water Wise">Team Water Wise</option>
+        <option value="Net Zero">Team Net Zero</option>
+        <option value="Renewables">Team Renewables</option>
+      </select>
+      <button type="submit" class="btn">Check In</button>
+    </form>
+    <p id="greeting" class="greeting" role="status" aria-live="polite"></p>
+  </section>
+
+  <section class="grid">
+    <div class="card center">
+      <h3>Total Attendance</h3>
+      <p class="big" id="totalCount">0</p>
+      <p class="muted">Goal: <span id="goalText">50</span> attendees</p>
+      <div class="progress-wrap" aria-label="Progress to goal">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <p id="progressText" class="muted">0% of goal</p>
+      <p id="celebration" class="celebration" hidden></p>
+    </div>
+
+    <div class="card">
+      <h3>Team Turnout</h3>
+      <ul class="teams">
+        <li><span class="dot blue"></span> Water Wise <strong id="countWater">0</strong></li>
+        <li><span class="dot dark"></span> Net Zero <strong id="countNet">0</strong></li>
+        <li><span class="dot green"></span> Renewables <strong id="countRenew">0</strong></li>
+      </ul>
+      <p id="leaderText" class="muted">No check-ins yet.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h3><i class="fa-solid fa-list"></i> Attendee List</h3>
+    <ul id="attendeeList" class="attendee-list"></ul>
+    <button id="resetBtn" class="btn secondary" type="button">Reset Demo Data</button>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>Built by Zefeng (Jack) Wang — UT Austin, Web Dev for Everyone. Intel Sustainability Summit check-in demo.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

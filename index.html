@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zefeng Wang | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo"><i class="fa-solid fa-code"></i> Zefeng Wang</a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero container">
+      <img class="avatar" src="https://avatars.githubusercontent.com/u/288649514?v=4" alt="Profile photo of Zefeng Wang" />
+      <h1>Hi, I'm Zefeng (Jack) Wang</h1>
+      <p class="tagline">UT Austin student building modern, accessible websites with HTML, CSS, and AI-assisted development.</p>
+      <p class="hero-text">Welcome to my portfolio. I'm learning web development through the Global Career Accelerator and turning ideas into live websites — one project at a time.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects"><i class="fa-solid fa-folder-open"></i> View My Projects</a>
+        <a class="btn secondary" href="https://github.com/JacKeed07" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2><i class="fa-solid fa-user"></i> About Me</h2>
+      <p>I'm Zefeng Wang, a student at the University of Texas at Austin currently enrolled in <strong>Web Dev for Everyone | Part 1</strong> through the Global Career Accelerator (Fall 2026). Before this course, I was curious about how websites work but had limited experience building complete pages from scratch.</p>
+      <p>In this program I'm building a foundation in front-end development — semantic HTML, modern CSS layout with Flexbox and Grid, responsive design, and accessibility best practices. I also work extensively with AI tools like GitHub Copilot and ChatGPT to brainstorm designs, generate starter code, and debug faster while I learn to read and edit code myself.</p>
+      <p>My goal is to keep growing this portfolio with every project I build in this course and beyond, and eventually pursue opportunities where I can combine clean design, accessible code, and real-world problem solving.</p>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2><i class="fa-solid fa-screwdriver-wrench"></i> My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fa-brands fa-html5"></i><h3>HTML5</h3><p>Semantic structure, accessible markup, forms</p></div>
+        <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><h3>CSS3</h3><p>Flexbox, Grid, responsive layout, transitions</p></div>
+        <div class="skill-card"><i class="fa-brands fa-js"></i><h3>JavaScript</h3><p>Basics, DOM, events — currently learning interactivity</p></div>
+        <div class="skill-card"><i class="fa-brands fa-github"></i><h3>Git &amp; GitHub</h3><p>Repos, Codespaces, GitHub Pages deployment</p></div>
+        <div class="skill-card"><i class="fa-solid fa-universal-access"></i><h3>Accessibility</h3><p>Color contrast, alt text, RTL &amp; inclusive design</p></div>
+        <div class="skill-card"><i class="fa-solid fa-robot"></i><h3>AI Tools</h3><p>Copilot &amp; ChatGPT for prompting, debugging, learning</p></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Personal Portfolio Website</h3>
+          <p>A single-page portfolio built with HTML and CSS to showcase my skills and projects. Deployed live with GitHub Pages.</p>
+          <span class="tag">HTML • CSS • GitHub Pages</span>
+        </article>
+        <article class="project-card">
+          <h3>Intel Sustainability Timeline</h3>
+          <p>An interactive, responsive timeline highlighting Intel's sustainability goals, built with Flexbox and hover interactions.</p>
+          <span class="tag">HTML • CSS • Flexbox</span>
+        </article>
+        <article class="project-card">
+          <h3>Intel Website Localization</h3>
+          <p>Adapted the Intel site for right-to-left languages and accessibility, using Bootstrap grid and an accessible newsletter form.</p>
+          <span class="tag">Bootstrap • Accessibility • RTL</span>
+        </article>
+        <article class="project-card">
+          <h3>charity: water Game Concept</h3>
+          <p>A mobile game concept and wireframe designed to engage college students and raise awareness about clean water access.</p>
+          <span class="tag">UX • Wireframing • Product Thinking</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section container contact">
+      <h2><i class="fa-solid fa-envelope"></i> Let's Connect</h2>
+      <p>I'm always excited to connect with fellow learners, mentors, and future collaborators.</p>
+      <div class="contact-links">
+        <a href="https://github.com/JacKeed07" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub — JacKeed07</a>
+        <a href="mailto:jack.wangzf@gmail.com"><i class="fa-solid fa-envelope"></i> jack.wangzf@gmail.com</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Zefeng (Jack) Wang — Built with HTML, CSS, and AI-assisted development. UT Austin, Web Dev.</p>
+  </footer>
+</body>
+</html>

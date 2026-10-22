@@ -93,7 +93,10 @@
     min-height:28px;text-align:center;font-weight:700;font-size:1.05rem;
     margin:12px 0 4px;color:var(--cw-black);
   }
-  .controls{display:flex;gap:10px;justify-content:center;margin-top:8px;flex-wrap:wrap;}
+  .controls{display:flex;gap:10px;justify-content:center;align-items:center;margin-top:8px;flex-wrap:wrap;}
+  .goalpick{font-weight:700;display:flex;align-items:center;gap:6px;}
+  .goalpick select{font:inherit;font-weight:700;padding:8px 10px;border:3px solid var(--cw-black);border-radius:999px;background:#fff;cursor:pointer;}
+  .goalpick select:disabled{opacity:.5;cursor:default;}
   button{
     font:inherit;font-weight:700;cursor:pointer;border-radius:999px;
     border:3px solid var(--cw-black);padding:10px 26px;font-size:1rem;
@@ -139,13 +142,13 @@
 </header>
 
 <main>
-  <p class="tagline">Catch the clean drops in your jerry can. Avoid the dirty water. Reach <b>200 points</b> before the timer runs out!</p>
+  <p class="tagline">Catch the clean drops in your jerry can. Avoid the dirty water. Reach <b><span id="goalTagline">200</span> points</b> before the timer runs out! You can change the target score below.</p>
 
   <div class="hud">
     <div class="stat"><div class="label">Score</div><div class="value" id="scoreVal">0</div></div>
     <div class="stat"><div class="label">Time</div><div class="value" id="timeVal">60</div></div>
     <div class="stat"><div class="label">Drops Caught</div><div class="value" id="caughtVal">0</div></div>
-    <div class="stat"><div class="label">Goal</div><div class="value">200</div></div>
+    <div class="stat"><div class="label">Goal</div><div class="value" id="goalVal">200</div></div>
   </div>
 
   <div id="gameArea">
@@ -160,6 +163,13 @@
   <div id="message">Press Start to play!</div>
 
   <div class="controls">
+    <label class="goalpick">Target score:
+      <select id="goalSelect">
+        <option value="100">100</option>
+        <option value="200" selected>200</option>
+        <option value="300">300</option>
+      </select>
+    </label>
     <button id="startBtn">Start Game</button>
     <button id="resetBtn">Reset</button>
   </div>
@@ -204,6 +214,9 @@
   var overlayText = document.getElementById('overlayText');
   var startBtn = document.getElementById('startBtn');
   var resetBtn = document.getElementById('resetBtn');
+  var goalSelect = document.getElementById('goalSelect');
+  var goalVal = document.getElementById('goalVal');
+  var goalTagline = document.getElementById('goalTagline');
 
   var DROP_SVG = {
     clean: '<svg viewBox="0 0 24 24"><path d="M12 2 C12 2 4 11 4 16 A8 8 0 0 0 20 16 C20 11 12 2 12 2 Z" fill="#2E9CCA"/></svg>',
@@ -218,6 +231,7 @@
     scoreVal.textContent = score;
     timeVal.textContent = timeLeft;
     caughtVal.textContent = caught;
+    goalVal.textContent = GOAL;
   }
 
   // ---------- Drops ----------
@@ -304,6 +318,7 @@
 
   function endGame(won) {
     playing = false;
+    goalSelect.disabled = false;
     clearInterval(spawnTimer);
     clearInterval(clockTimer);
     cancelAnimationFrame(rafId);
@@ -323,6 +338,9 @@
   // ---------- Start / reset ----------
   function startGame() {
     resetGame();
+    GOAL = parseInt(goalSelect.value, 10) || 200;
+    goalSelect.disabled = true;
+    updateHUD();
     playing = true;
     overlay.style.display = 'none';
     document.getElementById('confettiCanvas').style.display = 'none';
@@ -340,6 +358,7 @@
 
   function resetGame() {
     playing = false;
+    goalSelect.disabled = false;
     clearInterval(spawnTimer);
     clearInterval(clockTimer);
     cancelAnimationFrame(rafId);
@@ -355,6 +374,12 @@
 
   startBtn.addEventListener('click', startGame);
   resetBtn.addEventListener('click', resetGame);
+  goalSelect.addEventListener('change', function () {
+    GOAL = parseInt(goalSelect.value, 10) || 200;
+    goalTagline.textContent = GOAL;
+    updateHUD();
+    setMessage('Target score set to ' + GOAL + ' points. Press Start!');
+  });
 
   // ---------- Controls: mouse / touch / keys ----------
   function moveCanTo(clientX) {

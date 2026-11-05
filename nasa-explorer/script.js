@@ -4,7 +4,7 @@
 // NASA's free demo key. It works for this project, but it has low rate
 // limits. You can get your own free key at https://api.nasa.gov and
 // paste it here instead.
-const API_KEY = "DEMO_KEY";
+const API_KEY = "thBckMGkQWrLHN9ctzcBNzBtNfHkCw8b8Fw8mMDD";
 const APOD_URL = "https://api.nasa.gov/planetary/apod";
 
 // API Ninjas key for the Space Fact of the Day. Get a free key at

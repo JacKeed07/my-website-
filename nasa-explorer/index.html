@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Space Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>NASA Space Explorer</h1>
+    <p>Explore the universe with NASA's Astronomy Picture of the Day</p>
+  </header>
+
+  <!-- Space Fact of the Day (LevelUp) -->
+  <div id="fact">Did you know? Loading a space fact...</div>
+
+  <main>
+    <section class="controls">
+      <label for="date-picker">Pick a start date:</label>
+      <input type="date" id="date-picker">
+      <button id="explore-btn">Explore</button>
+    </section>
+
+    <!-- Loading message, shown while fetching and removed after -->
+    <p id="loading" hidden>Loading...</p>
+
+    <section id="gallery"></section>
+  </main>
+
+  <!-- Modal view -->
+  <div class="modal" id="space-modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <img id="modal-image" src="" alt="Full-size space image">
+      <a id="modal-video-link" href="" target="_blank" hidden>Watch the video</a>
+      <h3 id="modal-title"></h3>
+      <p id="modal-date"></p>
+      <p id="modal-explanation"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Images and data from NASA's Astronomy Picture of the Day (APOD) API.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

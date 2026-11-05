@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #000000;
+  color: #FFFFFF;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #0B3D91;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin-top: 8px;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+
+/* Space Fact of the Day banner */
+#fact {
+  background-color: #0B3D91;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 1rem;
+  border-bottom: 3px solid #FC3D21;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.controls label {
+  font-weight: 600;
+}
+
+#date-picker {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  padding: 10px 12px;
+  border: 2px solid #0B3D91;
+  border-radius: 6px;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+#explore-btn {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  background-color: #FC3D21;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#explore-btn:hover {
+  background-color: #d92f16;
+}
+
+#loading {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 32px 0;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border-top: 4px solid #FC3D21;
+}
+
+.gallery-item img,
+.gallery-item iframe {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+/* Hover zoom effect (LevelUp) */
+.gallery-item img {
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item h3 {
+  font-size: 1.05rem;
+  padding: 12px 14px 4px;
+}
+
+.gallery-item p {
+  font-size: 0.9rem;
+  color: #333333;
+  padding: 0 14px 14px;
+}
+
+.gallery-item .video-link {
+  display: block;
+  padding: 12px 14px;
+  color: #0B3D91;
+  font-weight: 600;
+}
+
+/* Modal view */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 10;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #FFFFFF;
+  color: #000000;
+  margin: 5% auto;
+  padding: 24px;
+  max-width: 800px;
+  border-radius: 8px;
+  border-top: 6px solid #FC3D21;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0B3D91;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #FC3D21;
+}
+
+#modal-image {
+  width: 100%;
+  border-radius: 4px;
+}
+
+#modal-video-link {
+  display: block;
+  margin: 12px 0;
+  color: #0B3D91;
+  font-weight: 600;
+}
+
+#modal-title {
+  margin-top: 16px;
+  font-size: 1.4rem;
+}
+
+#modal-date {
+  color: #555555;
+  font-size: 0.9rem;
+  margin: 4px 0 12px;
+}
+
+#modal-explanation {
+  font-size: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 16px;
+  background-color: #0B3D91;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+}

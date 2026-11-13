@@ -1,14 +1,14 @@
 // L'Oréal Paris — Smart Routine & Product Advisor
-// Frontend chat logic. The OpenAI API key is NEVER in this file:
-// the browser only talks to the Cloudflare Worker, which holds the key
-// as a secret and forwards requests to OpenAI.
+// Frontend chat logic. The API token is NEVER in this file:
+// the browser only talks to the Cloudflare Worker, which holds the token
+// as a secret and forwards requests to the AI model (GPT-4o via GitHub Models).
 
 /* ---------- Configuration ---------- */
 // Paste the deployed Cloudflare Worker URL here after deployment, e.g.
 // "https://loreal-chatbot.<your-subdomain>.workers.dev"
 // While this is empty, the chatbot answers from a small built-in demo
 // guide so the interface can be tried out; live AI replies need the Worker.
-const WORKER_URL = "";
+const WORKER_URL = "https://loreal-chatbot.jack-wangzf.workers.dev";
 
 /* ---------- System prompt (sent with every request) ---------- */
 const SYSTEM_PROMPT = [

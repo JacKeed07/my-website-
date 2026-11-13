@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'Oréal Paris — Smart Routine &amp; Product Advisor</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!------- Header / Branding ------->
+      <header class="site-header">
+        <img
+          src="data:image/png;base64,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"
+          alt="L'Oréal Paris"
+          class="brand-logo"
+        />
+        <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
+        <p class="site-subtitle">
+          Ask me about L'Oréal makeup, skincare, haircare, and fragrance.
+        </p>
+      </header>
+
+      <!------- Chat Area ------->
+      <main>
+        <section class="chatbox">
+          <!-- LevelUp: the user's latest question, shown above the response -->
+          <div id="currentQuestion" class="current-question" hidden></div>
+
+          <div id="chatWindow" class="chat-window">
+            <!-- messages will be appended here via JS -->
+          </div>
+
+          <div class="suggestions">
+            <button type="button" class="chip">
+              What's the difference between a serum and a treatment product?
+            </button>
+            <button type="button" class="chip">
+              Recommend a skincare routine for dry skin
+            </button>
+            <button type="button" class="chip">
+              Which foundation shade is right for warm skin tones?
+            </button>
+          </div>
+
+          <form id="chatForm" class="chat-form">
+            <label for="userInput" class="visually-hidden">Message</label>
+            <input
+              id="userInput"
+              name="userInput"
+              type="text"
+              placeholder="Ask me about products or routines…"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" id="sendBtn">
+              <span class="material-icons">send</span>
+              <span class="visually-hidden">Send</span>
+            </button>
+          </form>
+          <p class="demo-note" id="demoNote" hidden>
+            Demo replies — connect the live AI for full answers.
+          </p>
+        </section>
+      </main>
+
+      <!------- Footer Links ------->
+      <footer class="site-footer">
+        <p>&copy; 2025 L'Oréal Paris. All rights reserved.</p>
+        <nav>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

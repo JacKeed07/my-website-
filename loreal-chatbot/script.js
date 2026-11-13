@@ -1,7 +1,7 @@
 // L'Oréal Paris — Smart Routine & Product Advisor
 // Frontend chat logic. The API token is NEVER in this file:
 // the browser only talks to the Cloudflare Worker, which holds the token
-// as a secret and forwards requests to the AI model (GPT-4o via GitHub Models).
+// as a secret and forwards requests to the AI model (Llama 3.1 via Groq).
 
 /* ---------- Configuration ---------- */
 // Paste the deployed Cloudflare Worker URL here after deployment, e.g.

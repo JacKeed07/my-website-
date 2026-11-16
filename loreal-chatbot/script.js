@@ -8,7 +8,7 @@
 // "https://loreal-chatbot.<your-subdomain>.workers.dev"
 // While this is empty, the chatbot answers from a small built-in demo
 // guide so the interface can be tried out; live AI replies need the Worker.
-const WORKER_URL = "https://loreal-chatbot.jack-wangzf.workers.dev";
+const WORKER_URL = ""; // Demo mode fallback (2026-11-13): Groq switch did not land, so the page answers from the built-in guide instead of erroring. Re-add the Worker URL to restore live AI.
 
 /* ---------- System prompt (sent with every request) ---------- */
 const SYSTEM_PROMPT = [

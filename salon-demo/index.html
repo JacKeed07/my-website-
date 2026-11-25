@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumen Hair Studio — Austin | AI Receptionist (Demo)</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <header class="site-header">
+        <div class="brand-mark">LUMEN</div>
+        <h1 class="site-title">Lumen Hair Studio — South Congress, Austin</h1>
+        <p class="site-subtitle">
+          Ask about prices, hours, walk-ins, or book an appointment.
+          Open Tue–Sat. Demo salon — not a real business.
+        </p>
+      </header>
+
+      <main>
+        <section class="chatbox">
+          <div id="currentQuestion" class="current-question" hidden></div>
+
+          <div id="chatWindow" class="chat-window"></div>
+
+          <div class="suggestions">
+            <button type="button" class="chip">How much is a balayage?</button>
+            <button type="button" class="chip">Do you take walk-ins?</button>
+            <button type="button" class="chip">What are your hours?</button>
+            <button type="button" class="chip">How do I book an appointment?</button>
+          </div>
+
+          <form id="chatForm" class="chat-form">
+            <label for="userInput" class="visually-hidden">Message</label>
+            <input
+              id="userInput"
+              name="userInput"
+              type="text"
+              placeholder="Ask about a cut, color, price, or booking…"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" id="sendBtn">
+              <span class="material-icons">send</span>
+              <span class="visually-hidden">Send</span>
+            </button>
+          </form>
+          <p class="demo-note" id="demoNote">
+            Demo replies — this demo answers from a built-in price list. In the
+            paid version it answers from the salon's real FAQ and sends leads
+            to the owner.
+          </p>
+        </section>
+
+        <section class="lead-box">
+          <h2>Book — leave your details</h2>
+          <p>
+            Tell us what you want and when. In this demo nothing is sent
+            anywhere — your details stay in this browser. In the paid version
+            this goes straight to the salon owner by email / text.
+          </p>
+          <form id="leadForm" class="lead-form">
+            <label>
+              Name
+              <input id="leadName" type="text" placeholder="Your name" required />
+            </label>
+            <label>
+              Phone
+              <input id="leadPhone" type="tel" placeholder="(512) 555-0100" required />
+            </label>
+            <label>
+              Service
+              <select id="leadService">
+                <option>Women's cut — $68</option>
+                <option>Men's cut — $38</option>
+                <option>Balayage — from $185</option>
+                <option>Full color — from $95</option>
+                <option>Highlights — from $120</option>
+                <option>Blowout — $45</option>
+              </select>
+            </label>
+            <label>
+              Preferred day
+              <input id="leadDay" type="text" placeholder="e.g. Friday afternoon" required />
+            </label>
+            <button type="submit">Request booking</button>
+          </form>
+          <p class="lead-confirm" id="leadConfirm" hidden></p>
+        </section>
+
+        <section class="price-list">
+          <h2>Prices</h2>
+          <ul>
+            <li>Women's cut — $68</li>
+            <li>Men's cut — $38</li>
+            <li>Blowout — $45</li>
+            <li>Balayage — from $185</li>
+            <li>Full color — from $95</li>
+            <li>Highlights — from $120</li>
+            <li>Deep conditioning treatment — $35</li>
+          </ul>
+          <p>Hours: Tue–Fri 10am–7pm · Sat 9am–6pm · Sun 11am–5pm · Mon closed.
+          Walk-ins welcome Tue–Thu; appointments recommended Fri–Sat.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; 2026 Lumen Hair Studio (demo). Fictional salon built to show
+        how an AI receptionist works for a real Austin salon.</p>
+        <nav>
+          <a href="#">Prices</a>
+          <a href="#">Hours</a>
+          <a href="#">Book</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

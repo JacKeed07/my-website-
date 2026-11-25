@@ -1,0 +1,533 @@
+/* L'Oréal Paris — Smart Routine Builder.
+   Brand colors: black #000000 on white, gold accent #c09853,
+   red accent #ff003b (same as Project 8). */
+
+/* —— basic reset —— */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* —— body + fonts —— */
+body {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: #111;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.page-wrapper {
+  width: 90%;
+  max-width: 900px;
+}
+
+/* header */
+.site-header {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.brand-mark {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 14px;
+}
+
+.site-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.site-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  color: #666;
+}
+
+.site-subtitle::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: #c09853;
+  margin: 16px auto 0;
+}
+
+.rtl-toggle {
+  margin-top: 18px;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  background: #fff;
+  color: #111;
+  border: 1px solid #000;
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.rtl-toggle:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* section titles */
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 32px 0 14px;
+}
+
+/* search + filter */
+.search-section {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.search-section input {
+  flex: 2;
+  min-width: 200px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.search-section select {
+  flex: 1;
+  min-width: 160px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  background: #fff;
+  cursor: pointer;
+}
+
+.search-section input:focus,
+.search-section select:focus {
+  outline: 2px solid #c09853;
+  outline-offset: 2px;
+}
+
+/* products grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.placeholder-message,
+.no-results {
+  font-size: 15px;
+  color: #666;
+  padding: 16px 0;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 14px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Selected state: clear gold border + light gold background */
+.product-card.selected {
+  border: 2px solid #c09853;
+  background: #fdf8ef;
+  box-shadow: 0 0 0 2px #e3d9c8;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #fafafa;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.product-brand {
+  font-size: 13px;
+  color: #666;
+}
+
+.product-category {
+  font-size: 12px;
+  color: #c09853;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.desc-toggle {
+  align-self: flex-start;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  background: none;
+  border: none;
+  color: #c09853;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 2px 0;
+  text-decoration: underline;
+}
+
+.select-btn {
+  margin-top: auto;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.select-btn:hover {
+  background: #c09853;
+}
+
+/* Selected button: red, so the state is clear at a glance */
+.select-btn.selected {
+  background: #ff003b;
+}
+
+.select-btn:focus,
+.generate-btn:focus,
+.clear-btn:focus {
+  outline: 2px solid #c09853;
+  outline-offset: 2px;
+}
+
+/* selected products */
+.selected-products {
+  border-top: 2px solid #000;
+  margin-top: 36px;
+  padding-top: 4px;
+}
+
+.selected-empty {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.selected-list {
+  list-style: none;
+}
+
+.selected-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e3d9c8;
+  background: #fdf8ef;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.remove-btn {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  background: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  border-color: #ff003b;
+  color: #ff003b;
+}
+
+.selected-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.clear-btn {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  background: #fff;
+  color: #111;
+  border: 1px solid #000;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.generate-btn {
+  width: 100%;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.generate-btn:hover:not(:disabled) {
+  background: #c09853;
+}
+
+.generate-btn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+/* chat window */
+.chatbox {
+  margin: 32px 0;
+}
+
+/* The user's latest question, shown above the response */
+.current-question {
+  background: #f7f1e6;
+  border-left: 3px solid #c09853;
+  color: #333;
+  font-size: 15px;
+  font-style: italic;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.chat-window {
+  height: 360px;
+  border: 1px solid #000;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-y: auto;
+  background: #fafafa;
+  white-space: pre-line;
+}
+
+/* messages — distinct chat bubbles */
+.msg {
+  margin-bottom: 14px;
+  line-height: 1.55;
+  padding: 12px 16px;
+  border-radius: 18px;
+  max-width: 85%;
+  clear: both;
+}
+
+.msg.user {
+  background: #000;
+  color: #fff;
+  float: right;
+  border-bottom-right-radius: 4px;
+}
+
+.msg.ai {
+  background: #fff;
+  color: #111;
+  border: 1px solid #e3d9c8;
+  border-left: 3px solid #c09853;
+  float: left;
+  border-bottom-left-radius: 4px;
+}
+
+.msg.typing {
+  color: #999;
+}
+
+/* suggestion chips */
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.chip {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  background: #fff;
+  color: #111;
+  border: 1px solid #c09853;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: #c09853;
+  color: #fff;
+}
+
+/* input row */
+.chat-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.chat-form input:focus {
+  outline: 2px solid #c09853;
+  outline-offset: 2px;
+}
+
+.chat-form button {
+  font-size: 18px;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.chat-form button .material-icons {
+  font-size: 24px;
+}
+
+.chat-form button:hover:not(:disabled) {
+  background: #c09853;
+}
+
+.chat-form button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.chat-form button:focus {
+  outline: 2px solid #c09853;
+  outline-offset: 2px;
+}
+
+.demo-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #999;
+  text-align: center;
+}
+
+/* visually hidden */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* footer */
+.site-footer {
+  margin: 50px 0 40px;
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background: #000;
+}
+
+.site-footer nav {
+  margin-top: 12px;
+}
+
+.site-footer a {
+  margin: 0 8px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #c09853;
+}
+
+/* —— right-to-left layout ——
+   The browser flips flex and grid order by itself when dir="rtl".
+   These rules flip the parts that use left/right directly. */
+[dir="rtl"] .current-question {
+  border-left: none;
+  border-right: 3px solid #c09853;
+}
+
+[dir="rtl"] .msg.user {
+  float: left;
+  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 4px;
+}
+
+[dir="rtl"] .msg.ai {
+  float: right;
+  border-left: 1px solid #e3d9c8;
+  border-right: 3px solid #c09853;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 4px;
+}
+
+[dir="rtl"] .selected-actions {
+  justify-content: flex-start;
+}
+
+/* small screens */
+@media (max-width: 600px) {
+  .chat-window {
+    height: 320px;
+    font-size: 15px;
+  }
+
+  .msg {
+    max-width: 95%;
+  }
+
+  .brand-mark {
+    font-size: 24px;
+  }
+
+  .search-section {
+    flex-direction: column;
+  }
+}

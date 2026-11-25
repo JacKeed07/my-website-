@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'Oréal Paris — Smart Routine Builder</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!------- Header / Branding ------->
+      <header class="site-header">
+        <div class="brand-mark">L'ORÉAL PARIS</div>
+        <h1 class="site-title">Smart Routine Builder</h1>
+        <p class="site-subtitle">
+          Pick your products, and I will build a routine made just for you.
+        </p>
+        <button type="button" id="rtlToggle" class="rtl-toggle">
+          Switch to right-to-left layout
+        </button>
+      </header>
+
+      <main>
+        <!------- Search + Category Filter ------->
+        <section class="search-section">
+          <label for="searchInput" class="visually-hidden"
+            >Search products</label
+          >
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search products by name or keyword…"
+            autocomplete="off"
+          />
+          <label for="categoryFilter" class="visually-hidden"
+            >Filter by category</label
+          >
+          <select id="categoryFilter">
+            <option value="all">All Categories</option>
+            <option value="cleanser">Cleanser</option>
+            <option value="fragrance">Fragrance</option>
+            <option value="hair color">Hair Color</option>
+            <option value="hair styling">Hair Styling</option>
+            <option value="haircare">Haircare</option>
+            <option value="makeup">Makeup</option>
+            <option value="men's grooming">Men's Grooming</option>
+            <option value="moisturizer">Moisturizer</option>
+            <option value="skincare">Skincare</option>
+            <option value="suncare">Suncare</option>
+          </select>
+        </section>
+
+        <!------- Products Grid ------->
+        <section>
+          <h2 class="section-title">Browse Products</h2>
+          <div id="productsContainer" class="products-grid">
+            <p class="placeholder-message">Loading products…</p>
+          </div>
+          <p id="noResults" class="no-results" hidden>
+            No products match your search. Try another word or category.
+          </p>
+        </section>
+
+        <!------- Selected Products ------->
+        <section class="selected-products">
+          <h2 class="section-title">Selected Products</h2>
+          <p id="selectedEmpty" class="selected-empty">
+            No products selected yet. Click Select on a product to add it
+            here.
+          </p>
+          <ul id="selectedProductsList" class="selected-list"></ul>
+          <div class="selected-actions">
+            <button type="button" id="clearSelected" class="clear-btn">
+              Clear All
+            </button>
+          </div>
+          <button type="button" id="generateRoutine" class="generate-btn">
+            Generate Routine
+          </button>
+        </section>
+
+        <!------- Chat Area ------->
+        <section class="chatbox">
+          <h2 class="section-title">About Your Routine</h2>
+          <!-- The user's latest question, shown above the response -->
+          <div id="currentQuestion" class="current-question" hidden></div>
+
+          <div id="chatWindow" class="chat-window">
+            <!-- messages will be added here by JS -->
+          </div>
+
+          <div class="suggestions">
+            <button type="button" class="chip">
+              Build a morning routine for me
+            </button>
+            <button type="button" class="chip">
+              What order should I use my products in?
+            </button>
+            <button type="button" class="chip">
+              Which of my products is best for dry skin?
+            </button>
+          </div>
+
+          <form id="chatForm" class="chat-form">
+            <label for="userInput" class="visually-hidden">Message</label>
+            <input
+              id="userInput"
+              name="userInput"
+              type="text"
+              placeholder="Ask me about your routine…"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" id="sendBtn">
+              <span class="material-icons">send</span>
+              <span class="visually-hidden">Send</span>
+            </button>
+          </form>
+          <p class="demo-note" id="demoNote" hidden>
+            Demo replies — the live AI is not connected yet, so this routine
+            was built from your selected products on this page.
+          </p>
+        </section>
+      </main>
+
+      <!------- Footer Links ------->
+      <footer class="site-footer">
+        <p>&copy; 2025 L'Oréal Paris. All rights reserved.</p>
+        <nav>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

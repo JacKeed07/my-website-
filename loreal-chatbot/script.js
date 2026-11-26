@@ -1,14 +1,14 @@
 // L'Oréal Paris — Smart Routine & Product Advisor
 // Frontend chat logic. The API token is NEVER in this file:
 // the browser only talks to the Cloudflare Worker, which holds the token
-// as a secret and forwards requests to the AI model (Llama 3.1 via Groq).
+// as a secret and forwards requests to the AI model (gpt-4o-mini via OpenAI).
 
 /* ---------- Configuration ---------- */
 // Paste the deployed Cloudflare Worker URL here after deployment, e.g.
 // "https://loreal-chatbot.<your-subdomain>.workers.dev"
 // While this is empty, the chatbot answers from a small built-in demo
 // guide so the interface can be tried out; live AI replies need the Worker.
-const WORKER_URL = ""; // Demo mode fallback (2026-11-13): Groq switch did not land, so the page answers from the built-in guide instead of erroring. Re-add the Worker URL to restore live AI.
+const WORKER_URL = "https://loreal-chatbot.jack-wangzf.workers.dev";
 
 /* ---------- System prompt (sent with every request) ---------- */
 const SYSTEM_PROMPT = [
